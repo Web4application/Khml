@@ -1,0 +1,19 @@
+{
+  "name": "khml-compiler",
+  "version": "1.0.0",
+  "description": "KHML (Knowledge Hyper Markup Language) compiler + runtime + dev server",
+  "main": "khml.js",
+  "type": "module",
+  "bin": {
+    "khml": "./khml.js"
+  },
+  "scripts": {
+    "build": "node khml.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "express": "^4.21.0",
+    "fs-extra": "^11.1.1"
+  }
+}
