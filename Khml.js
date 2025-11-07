@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+import fs from "fs-extra";
+import path from "path";
+
+// --- KHML → HTML converter ---
+function khmlToHtml(khml) {
+  return khml
+    // Root structure
+    .replace(/<page([^>]*)>/g, '<!DOCTYPE html><html$1><head><meta charset="utf-8"><script src="/runtime.js"></script></head><body>')
+    .replace(/<\/page>/g, "</body></html>")
+
+    // Common tags
+    .replace(/<card>/g, '<div class="card">')
+    .replace(/<\/card>/g, "</div>")
+    .replace(/<feed>/g, '<section class="feed">')
+    .replace(/<\/feed>/g, "</section>")
+    .replace(/<post([^>]*)>/g, '<article$1>')
+    .replace(/<\/post>/g, "</article>")
+
+    // Simple tags
+    .replace(/<text>(.*?)<\/text>/g, "<p>$1</p>")
+    .replace(/<logo([^>]*)\/>/g, "<div class='logo'$1></div>")
+
+    // AI tags (temporary)
+    .replace(/<ai-think([^>]*)>(.*?)<\/ai-think>/gs, (_, attrs, inner) => {
+      return `<div class="ai-think" data-attrs="${attrs}">🤖 Thinking: ${inner}</div>`;
+    });
+}
+
+// --- Compile Command ---
+async function compileKHML() {
+  const inputPath = path.resolve("src/index.khml");
+  const outputPath = path.resolve("dist/index.html");
+
+  if (!fs.existsSync(inputPath)) {
+    console.error("❌ No src/index.khml found.");
+    process.exit(1);
+  }
+
+  const khml = await fs.readFile(inputPath, "utf-8");
+  const html = khmlToHtml(khml);
+
+  await fs.ensureDir("dist");
+  await fs.writeFile(outputPath, html);
+
+  console.log("✅ KHML compiled → dist/index.html");
+}
+
+compileKHML();
