@@ -1,0 +1,20 @@
+<page title="KHMLBook" theme="discord dark">
+  <header>
+    <logo text="KHMLBook" />
+    <nav>
+      <link to="home" />
+      <link to="profile" />
+    </nav>
+  </header>
+
+  <feed>
+    <post user="Yakub" time="5m ago">
+      <text>Hello from KHML 🌍</text>
+    </post>
+    <post user="Lola" time="1m ago">
+      <ai-think prompt="Say something inspiring about KHML.">
+        This post will soon be powered by AI.
+      </ai-think>
+    </post>
+  </feed>
+</page>
