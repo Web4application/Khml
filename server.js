@@ -6,24 +6,30 @@ import fs from "fs-extra";
 
 const app = express();
 const PORT = 3000;
-
 const distDir = path.resolve("dist");
 const runtimeDir = path.resolve("runtime");
 
-// Compile once on start
+// Compile once
 await fs.ensureDir(distDir);
 exec("node khml.js");
 
-// Watch for KHML changes
-const watcher = chokidar.watch("src/**/*.khml");
-watcher.on("change", () => {
+// Watcher
+chokidar.watch("src/**/*.khml").on("change", () => {
   console.log("♻️ Rebuilding KHML...");
   exec("node khml.js");
 });
 
+// Serve static
 app.use(express.static(distDir));
 app.use(express.static(runtimeDir));
 
+// --- AI route (stub) ---
+app.get("/ai", async (req, res) => {
+  const { prompt } = req.query;
+  // TODO: replace this stub with a real call to your AI backend
+  res.json({ text: `This is a mock AI response to: "${prompt}"` });
+});
+
 app.listen(PORT, () => {
-  console.log(`🚀 KHML Dev Server running at http://localhost:${PORT}`);
+  console.log(`🚀 KHML Dev Server with AI running at http://localhost:${PORT}`);
 });
