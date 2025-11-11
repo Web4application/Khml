@@ -2280,3 +2280,4 @@ class Angular2HtmlLexer(DelegatingLexer):
 
     def __init__(self, **options):
         super(Angular2HtmlLexer, self).__init__(HtmlLexer, Angular2Lexer, **options)
+
