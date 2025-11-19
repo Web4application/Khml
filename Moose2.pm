@@ -56,6 +56,6 @@
    "release" : "Moose-2.0001",
    "documentation_length" : 5,
    "path" : "lib/Moose.pm",
-   "date" : "2011-04-23T00:48:02",
+   "date" : "2025-04-23T00:48:02",
    "slop" : 637
 }
