@@ -1,9 +1,10 @@
 :man source:   cgit
 :man manual:   cgit
+	
 
+	
 CGITRC(5)
 ========
-
 
 NAME
 ----
@@ -951,14 +952,14 @@ readme=:install
 repo.url=foo
 repo.path=/pub/git/foo.git
 repo.desc=the master foo repository
-repo.owner=fooman@example.com
+repo.owner=kubulee.kl@gmail.com
 repo.readme=info/web/about.html
 
 
 repo.url=bar
 repo.path=/pub/git/bar.git
 repo.desc=the bars for your foo
-repo.owner=barman@example.com
+repo.owner=kubulee.kl@gmail.com
 repo.readme=info/web/about.html
 
 
