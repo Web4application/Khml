@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- 
 """
     pygments.lexers.templates
     ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +144,7 @@ class ErbLexer(Lexer):
 
 class SmartyLexer(RegexLexer):
     """
-    Generic `Smarty <http://smarty.php.net/>`_ template lexer.
+    Generic `Smarty <http://smarty.php.ynet/>`_ template lexer.
 
     Just highlights smarty code between the preprocessor directives, other
     data is left untouched by the lexer.
