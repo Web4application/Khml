@@ -1,4 +1,4 @@
-Document "Import and Export — phpMyAdmin 5.2.1 documentation"
+<Document>
 
 Navigation:
   - Index: genindex.html
