@@ -23,11 +23,39 @@
   <main>
     <section>
       <p>Here you can showcase your projects with images, descriptions, and links.</p>
+      
+      <div class="projects-grid">
+        <!-- Example Project 1 -->
+        <div class="project-card">
+          <img src="images/project1.jpg" alt="Project 1">
+          <h2>Project 1: Web App</h2>
+          <p>A web application built with HTML, CSS, and JavaScript.</p>
+          <a href="https://github.com/yourusername/project1" target="_blank">View Project</a>
+        </div>
+
+        <!-- Example Project 2 -->
+        <div class="project-card">
+          <img src="images/project2.jpg" alt="Project 2">
+          <h2>Project 2: Mobile App</h2>
+          <p>A mobile app developed using React Native and Firebase.</p>
+          <a href="https://github.com/yourusername/project2" target="_blank">View Project</a>
+        </div>
+
+        <!-- Example Project 3 -->
+        <div class="project-card">
+          <img src="images/project3.jpg" alt="Project 3">
+          <h2>Project 3: Portfolio Website</h2>
+          <p>A personal portfolio website showcasing my work and skills.</p>
+          <a href="https://github.com/yourusername/project3" target="_blank">View Project</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
     <p>© 2025 Web4application</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
