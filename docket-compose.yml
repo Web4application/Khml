@@ -1,0 +1,16 @@
+docker run --rm -it \
+-v "${PWD}:/local" \
+--entrypoint /bin/bash \
+openapitools/openapi-generator-cli
+
+ln -s /usr/local/bin/docker-entrypoint.sh /usr/local/bin/openapi-generator
+
+# Config Options for go-gin-server
+#  https://openapi-generator.tech/docs/generators/go-gin-server
+openapi-generator config-help -g go-gin-server
+
+openapi-generator generate \
+-g go-gin-server \
+-i /local/spec/swagger.yaml \
+-o /local/out/gin-server \
+--additional-properties=packageName=startapi
